@@ -9,6 +9,13 @@ export default function DocumentPage({ docId }) {
 
     socket.emit("join-document", docId);
 
+
+    socket.on("load-document", (data) => {
+      setDocument(data);
+    });
+
+
+
     socket.on("receive-changes", (content) => {
       setDocument(content);
     });
@@ -25,9 +32,21 @@ export default function DocumentPage({ docId }) {
 
     socket.emit("send-changes", {
       docId,
-      content: value
+      content: value,
     });
   };
+
+  useEffect(() => {
+  const interval = setInterval(() => {
+    socket.emit("save-document", { docId, content: document });
+  }, 2000);
+
+  return () => clearInterval(interval);
+}, [document]);
+
+
+
+
 
   return (
     <textarea
