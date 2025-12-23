@@ -1,17 +1,74 @@
-# React + Vite
+```markdown
+# 📝 Realtime Collaborative Editor - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend UI for the **Realtime Collaborative Realtime Text Editor**.
 
-Currently, two official plugins are available:
+Multiple users can type together in the same document — changes are synced instantly using Socket.io and persisted to PostgreSQL.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Tech Stack
+- React + Vite
+- Socket.io Client
+- Deployed on **Vercel**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## ⚙️ Setup & Run Locally
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# realtime-editor-frontend
+### 1️⃣ Clone Repo
+```bash
+git clone https://github.com/SushanthMusham/realtime-editor-frontend
+cd realtime-editor-frontend
+
+
+2️⃣ Install Dependencies
+npm install
+
+
+3️⃣ Update Backend URL
+File: src/socket.js
+export const socket = io("https://realtime-editor-backend-h48m.onrender.com", {
+  autoConnect: false
+});
+
+4️⃣ Start App
+npm run dev
+Runs on:
+http://localhost:5173
+
+Runs on:
+http://localhost:5173
+
+
+🧭 Usage
+Open:
+https://realtime-editor-frontend-ashen.vercel.app
+Then go to:
+/doc/test-doc-123
+
+Example:
+https://realtime-editor-frontend-ashen.vercel.app/doc/test-doc-123
+
+
+Open same URL in 2 tabs → Start typing → Enjoy realtime sync 😎
+
+
+📌 Features
+✔️ Realtime typing sync
+✔️ Works across browsers
+✔️ Backend persistence
+✔️ Production ready
+✔️ Simple & clean UI
+
+
+🌍 Production Deployment
+Frontend hosted on Vercel:
+https://realtime-editor-frontend-ashen.vercel.app
+
+Backend hosted on Render:
+https://realtime-editor-backend-h48m.onrender.com
+
+✨ Author
+Sushanth Musham
+IIT Bhubaneswar
